@@ -14,7 +14,8 @@ contract MoneySaver {
         m_goal = goal;
     }
 
-    function getGoal() external view returns (uint) {
+    function getGoal() external payable returns (uint) {
+        require(msg.value > 1 ether);
         return m_goal;
     }
 
